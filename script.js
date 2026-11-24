@@ -19,7 +19,11 @@ function getComputerChoice() {
 function getHumanChoice() {
   let humanChoice = prompt("Choose rock, paper, or scissors: ");
   console.log(`Human choice: ${humanChoice}`);
+  if(humanChoice != null) {
   return humanChoice;
+  } else {
+    askPlayAgain();
+  }
 }
 
 function askPlayAgain() {
@@ -34,7 +38,7 @@ function askPlayAgain() {
 }
 
 function playRound() {
-  let humanChoice = getHumanChoice();
+  let humanChoice = getHumanChoice().toLowerCase();
   let computerChoice = getComputerChoice();
 
   if (humanChoice === computerChoice) {
