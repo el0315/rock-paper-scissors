@@ -9,12 +9,6 @@
   </head>
   <body>
     <h1 class="main-header">Rock Paper Scissors</h1>
-    <h3 class="select-move-header">Select a move</h3>
-    <div class="rps-move-container">
-      <button class="rps-move-button" id="rock-btn">Rock</button>
-      <button class="rps-move-button" id="paper-btn">Paper</button>
-      <button class="rps-move-button" id="scissors-btn">Scissors</button>
-    </div>
     <div class="game-info-container">
       <div class="move-selection-info-container">
         <h3>Move selections</h3>
@@ -25,11 +19,20 @@
           Computer's move: <span id="computer-selection-detail"></span>
         </p>
       </div>
-
       <div class="score-container">
         <h3>Score</h3>
-        <p class="human-score">You: <span id="human-score-detail"></span> | Computer: <span id="computer-score-detail"></span> | Ties: <span id="ties-detail"></span></p>
+        <p class="human-score">
+          You: <span id="human-score-detail"></span> | Computer:
+          <span id="computer-score-detail"></span> | Ties:
+          <span id="ties-detail"></span>
+        </p>
         <p class="total-games">Total: <span id="total-games-detail"></span></p>
+      </div>
+      <h3 class="select-move-header">Select a move</h3>
+      <div class="rps-move-container">
+        <button class="rps-move-button" id="rock-btn">Rock</button>
+        <button class="rps-move-button" id="paper-btn">Paper</button>
+        <button class="rps-move-button" id="scissors-btn">Scissors</button>
       </div>
     </div>
   </body>
