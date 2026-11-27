@@ -22,6 +22,8 @@ h1, h3 {
 
 .main-header {
     font-weight: 900;
+    font-size: 32px;
+    color: black;
 }
 
 .select-move-header {
