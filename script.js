@@ -2,62 +2,64 @@ let humanScore = 0;
 let computerScore = 0;
 let ties = 0;
 
-function getComputerChoice() {
+function updateScore() {
+  document.querySelector("#human-score-detail").textContent = humanScore;
+  document.querySelector("#computer-score-detail").textContent = computerScore;
+  document.querySelector("#ties-detail").textContent = ties;
+}
+
+function getHumanMoveSelection() {
+  const moveButtons = document.querySelectorAll(".rps-move-button");
+  moveButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const humanMoveSelection = event.target.textContent.trim();
+      document.querySelector("#human-selection-detail").textContent =
+        humanMoveSelection;
+      playRound(humanMoveSelection);
+    });
+  });
+}
+
+function getComputerMoveSelection() {
   let randomNumber = Math.random() * 3;
-  let computerChoice;
+  let computerMoveSelection;
   if (randomNumber < 1) {
-    computerChoice = "rock";
+    computerMoveSelection = "Rock";
   } else if (randomNumber < 2) {
-    computerChoice = "paper";
+    computerMoveSelection = "Paper";
   } else {
-    computerChoice = "scissors";
+    computerMoveSelection = "Scissors";
   }
-  console.log(`Computer choice: ${computerChoice}`);
-  return computerChoice;
+  document.querySelector("#computer-selection-detail").textContent =
+    computerMoveSelection;
+  return computerMoveSelection;
 }
 
-function getHumanChoice() {
-  let humanChoice = prompt("Choose rock, paper, or scissors: ");
-  console.log(`Human choice: ${humanChoice}`);
-  if(humanChoice != null) {
-  return humanChoice;
-  } else {
-    askPlayAgain();
-  }
-}
+function playRound(humanMoveSelection) {
+  let computerMoveSelection = getComputerMoveSelection();
 
-function askPlayAgain() {
-  let playAgain = confirm(
-    `Human: ${humanScore}\nComputer: ${computerScore}\nTies: ${ties}\nPlay again?`,
-  );
-  if (playAgain) {
-    playRound();
-  } else {
-    alert("Thanks for playing!");
-  }
-}
-
-function playRound() {
-  let humanChoice = getHumanChoice().toLowerCase();
-  let computerChoice = getComputerChoice();
-
-  if (humanChoice === computerChoice) {
+  if (humanMoveSelection === computerMoveSelection) {
     ties++;
-    console.log("Tie!");
-  } else if (humanChoice === "rock" && computerChoice === "scissors") {
+  } else if (
+    humanMoveSelection === "Rock" &&
+    computerMoveSelection === "Scissors"
+  ) {
     humanScore++;
-    console.log("Human wins!");
-  } else if (humanChoice === "paper" && computerChoice === "rock") {
+  } else if (
+    humanMoveSelection === "Paper" &&
+    computerMoveSelection === "Rock"
+  ) {
     humanScore++;
-    console.log("Human wins!");
-  } else if (humanChoice === "scissors" && computerChoice === "paper") {
+  } else if (
+    humanMoveSelection === "Scissors" &&
+    computerMoveSelection === "Paper"
+  ) {
     humanScore++;
-    console.log("Human wins!");
   } else {
     computerScore++;
-    console.log("Computer wins!");
   }
-  askPlayAgain();
+  updateScore()
 }
 
-playRound();
+updateScore()
+getHumanMoveSelection();

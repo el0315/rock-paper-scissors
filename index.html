@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <!-- <script src="script.js" defer></script> -->
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,15 +15,18 @@
     <button class="rps-move-button">Paper</button>
     <button class="rps-move-button">Scissors</button>
 </div>
+
 <div>
-    <p class="human-selection">You selected: </p>
-    <p class="computer-selection">Computer selected: </p>
+    <p class="human-selection">Selected move: <span id="human-selection-detail"></span></p>
+    <p class="computer-selection">Computer selected: <span id="computer-selection-detail"></span> </p>
 </div>
+
+
 <div class="score-container">
     <h3>Score</h3>
-    <p class="human-score">Player: </p>
-    <p class="computer-score">Computer: </p>
-    <p class="ties">Ties: </p>
+    <p class="human-score">Human: <span id="human-score-detail"></span> </p>
+    <p class="computer-score">Computer: <span id="computer-score-detail"></span> </p>
+    <p class="ties">Ties: <span id="ties-detail"></span> </p>
 </div>
 
     
