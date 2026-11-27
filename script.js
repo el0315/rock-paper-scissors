@@ -1,11 +1,13 @@
 let humanScore = 0;
 let computerScore = 0;
 let ties = 0;
+let totalGames = 0;
 
 function updateScore() {
   document.querySelector("#human-score-detail").textContent = humanScore;
   document.querySelector("#computer-score-detail").textContent = computerScore;
   document.querySelector("#ties-detail").textContent = ties;
+  document.querySelector("#total-games-detail").textContent = totalGames;
 }
 
 function getHumanMoveSelection() {
@@ -58,7 +60,9 @@ function playRound(humanMoveSelection) {
   } else {
     computerScore++;
   }
+  totalGames += 1
   updateScore()
+  
 }
 
 updateScore()

@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Rock Paper Scissors</h1>
-<h3>Select a move below</h3>
-<div class="rps-move-container">
-    <button class="rps-move-button">Rock</button>
-    <button class="rps-move-button">Paper</button>
-    <button class="rps-move-button">Scissors</button>
-</div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="main-header">Rock Paper Scissors</h1>
+    <h3 class="select-move-header">Select a move</h3>
+    <div class="rps-move-container">
+      <button class="rps-move-button" id="rock-btn">Rock</button>
+      <button class="rps-move-button" id="paper-btn">Paper</button>
+      <button class="rps-move-button" id="scissors-btn">Scissors</button>
+    </div>
+    <div class="game-info-container">
+      <div class="move-selection-info-container">
+        <h3>Move selections</h3>
+        <p class="human-selection">
+          Your move: <span id="human-selection-detail"></span>
+        </p>
+        <p class="computer-selection">
+          Computer's move: <span id="computer-selection-detail"></span>
+        </p>
+      </div>
 
-<div>
-    <p class="human-selection">Selected move: <span id="human-selection-detail"></span></p>
-    <p class="computer-selection">Computer selected: <span id="computer-selection-detail"></span> </p>
-</div>
-
-
-<div class="score-container">
-    <h3>Score</h3>
-    <p class="human-score">Human: <span id="human-score-detail"></span> </p>
-    <p class="computer-score">Computer: <span id="computer-score-detail"></span> </p>
-    <p class="ties">Ties: <span id="ties-detail"></span> </p>
-</div>
-
-    
-</body>
+      <div class="score-container">
+        <h3>Score</h3>
+        <p class="human-score">You: <span id="human-score-detail"></span> | Computer: <span id="computer-score-detail"></span> | Ties: <span id="ties-detail"></span></p>
+        <p class="total-games">Total: <span id="total-games-detail"></span></p>
+      </div>
+    </div>
+  </body>
 </html>
